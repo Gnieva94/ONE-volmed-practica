@@ -12,4 +12,11 @@ public record DTODireccion(
         String numero,
         @NotBlank
         String complemento) {
+        public DTODireccion(Direccion direccion){
+                this(direccion.getCalle(),
+                        direccion.getDistrito(),
+                        direccion.getCiudad(),
+                        direccion.getNumero(),
+                        direccion.getComplemento());
+        }
 }
